@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Proyecto1.Models.sanctuary>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="text-white">Santuarios</h2>
+
+<p class="text-white">
+    @Html.ActionLink("Añadir uno nuevo", "Create")
+</p>
+<table class="table" id="Santuarios">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ubicacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ubicacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descripcion)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Detalles", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+@section  Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+            $('#Santuarios').DataTable();
+        });
+    </script>
+}

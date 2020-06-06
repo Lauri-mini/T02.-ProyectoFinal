@@ -1,0 +1,29 @@
+﻿@model Proyecto1.Models.visit_shrine
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 class="text-white">Detalles</h2>
+
+<div>
+    <h2 class="text-white">Visitas y Santuarios</h2>
+    <hr />
+    <table class="table table-primary table-striped col-md-5">
+        <tbody>
+
+            <tr>
+                <td><strong>@Html.DisplayNameFor(model => model.santuario.Nombre)</strong></td>
+                <td>@Html.DisplayFor(model => model.santuario.Nombre)</td>
+            </tr>
+            <tr>
+                <td><strong>@Html.DisplayNameFor(model => model.visita.Nombre)</strong></td>
+                <td>@Html.DisplayFor(model => model.visita.Nombre)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Regresar", "Index")
+</p>

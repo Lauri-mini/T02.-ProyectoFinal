@@ -1,0 +1,65 @@
+﻿@using Proyecto1.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+}
+
+<div class="row justify-content-center m-4">
+    <div class="col-md-8">
+        <div class="card mb-4">
+            <div class="card-header py-2 bg-info">
+                <h5 class="text-center text-white">Iniciar Sesión</h5>
+            </div>
+            <div class="card-body">
+                <section id="loginForm">
+                    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            <label class="col-md-4">Correo electrónico</label>
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4">Contraseña</label>
+                            <div class="col-md-10">
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <div class="checkbox">
+                                    @Html.CheckBoxFor(m => m.RememberMe)
+                                    <label class="col-md-4">Recordar</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <button class="btn btn-sm btn-info">
+                                    <span class="text-white-50"><i class="fa fa-check" aria-hidden="true"></i></span>
+                                    <span class="text-white"> Iniciar sesión</span>
+                                </button>
+                                <a href="@Url.Action("Register","Account")" class="btn btn-sm btn-primary">
+                                    <span class="text-white-50"><i class="fa fa-check-square-o" aria-hidden="true"></i></span>
+                                    <span class="text-white"> Registrarse</span>
+                                </a>
+                            </div>
+                        </div>
+                    }
+                </section>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

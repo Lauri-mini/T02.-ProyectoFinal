@@ -1,0 +1,38 @@
+﻿@model Proyecto1.Models.sanctuary
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2 class="text-white">Eliminar</h2>
+
+<h2 class="text-white">¿Estas seguro de eliminar esto?</h2>
+<div>
+    <h2 class="text-white">Santuario</h2>
+    <hr />
+    <table class="table table-primary table-striped col-md-5">
+        <tbody>
+            <tr>
+                <td><strong>@Html.DisplayNameFor(model => model.Nombre)</strong></td>
+                <td>@Html.DisplayFor(model => model.Nombre)</td>
+            </tr>
+            <tr>
+                <td><strong> @Html.DisplayNameFor(model => model.Ubicacion)</strong></td>
+                <td> @Html.DisplayFor(model => model.Ubicacion)</td>
+            </tr>
+            <tr>
+                <td><strong>@Html.DisplayNameFor(model => model.Descripcion)</strong></td>
+                <td>@Html.DisplayFor(model => model.Descripcion)</td>
+            </tr>
+        </tbody>
+    </table>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar", "Index")
+        </div>
+    }
+</div>

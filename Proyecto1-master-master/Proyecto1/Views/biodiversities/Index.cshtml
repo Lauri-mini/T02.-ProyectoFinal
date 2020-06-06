@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Proyecto1.Models.biodiversity>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="text-white">Biodiversidad</h2>
+
+<p class="text-white">
+    @Html.ActionLink("Añadir uno nuevo", "Create")
+</p>
+<table class="table" id="biodiversidad">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.santuario.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Especie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImgUrl)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.santuario.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tipo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Especie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ImgUrl)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Detalles", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+         }
+    </tbody>
+
+</table>
+@section  Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready( function () {
+            $('#biodiversidad').DataTable();
+        } );
+    </script>
+}

@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Proyecto1.Models.visit>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="text-white">Visitas</h2>
+
+<p class="text-white">
+    @Html.ActionLink("Crear uno nuevo", "Create")
+</p>
+<table class="table" id="Visitas">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cantidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaHora)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cantidad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaHora)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Detalles", "Details", new { id = item.Id })
+                    @if (User.IsInRole("Admin"))
+                    {
+                        @Html.ActionLink("Eliminar", "Delete", new { id = item.Id })
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+@section  Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready( function () {
+            $('#Visitas').DataTable();
+        } );
+    </script>
+}

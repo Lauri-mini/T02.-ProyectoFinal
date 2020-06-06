@@ -1,0 +1,52 @@
+﻿@model Proyecto1.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<div class="row justify-content-center m-4">
+    <div class="col-md-8">
+        <div class="card mb-4">
+            <div class="card-header py-2 bg-info">
+                <h5 class="text-white center">Registro</h5>
+            </div>
+            <div class="card-body">
+                @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <h4 class="center">Registrese sin costo</h4>
+                    <hr />
+                    @Html.ValidationSummary("", new { @class = "text-danger" })
+                    <div class="form-group">
+                        <label class="col-md-4">Correo electrónico</label>
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-6">Contraseña</label>
+                        <div class="col-md-10">
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-6">Confirmar contraseña</label>
+                        <div class="col-md-10">
+                            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <button class="btn btn-info btn-sm"><span class="text-white-50"><i class="fa fa-check-square-o" aria-hidden="true"></i></span><span class="text-white"> Registrarse</span></button>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

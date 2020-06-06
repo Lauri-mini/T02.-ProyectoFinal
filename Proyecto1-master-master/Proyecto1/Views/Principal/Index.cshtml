@@ -1,0 +1,185 @@
+﻿@{
+    ViewBag.Title = "Index";
+
+}
+
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="~/Content/img/chamela.jpg" height="550" alt="Islas de la Bahía de Chamela">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="~/Content/img/ventilas.jpg" height="550" alt="Ventilas Hidrotermales">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="~/Content/img/mariposamonarca.jpg" height="550" alt="Santuario de la Mariposa Monarca">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<div class="content">
+    <div class="ic"></div>
+    <div class="container_12">
+
+
+        @*1*@
+
+        <div class="grid_4">
+            <div class="block1">
+                <div class="img_block">
+                    <img src="~/Content/img/chamela.jpg" height="200" width="400" alt="" class="img_inner">
+
+                </div>
+                <div class="text1">Islas de la Bahía de Chamela</div><br>
+                <div class="card-body text-center">
+                    <h5 class="card-title">El refugio de diversas especies</h5>
+                    <p class="card-text">
+                        Once islas y varios islotes conforman esta entrada al Océano Pacífico desde las costas tapatías. Un destino pa
+                        radisiaco donde habita una extensa variedad de aves marinas entre las que destaca el pentiazul.
+                        Las aguas transparentes de este tipo de santuarios son ideales para bucear y conocer las maravillas submarinas.
+                    </p>
+                </div>
+                <div class="card-body">
+                    <a href="@Url.Action("Details/3","sanctuaries")" class="btn">Ver detalles</a>
+                </div>
+            </div>
+        </div>
+
+        @*2*@
+
+        <div class="grid_4">
+            <div class="block1">
+                <div class="img_block">
+                    <img src="~/Content/img/mariposamonarca.jpg" height="200" width="400" alt="" class="img_inner">
+
+                </div>
+                <div class="text1">Santuario de mariposas monarca</div><br>
+                <div class="card-body text-center">
+                    <h5 class="card-title">El escondite de las mariposas</h5>
+                    <p class="card-text">
+                        Lo maravilloso de esta especie es el fantástico recorrido que realiza desde Canadá a México, volando entre 2,000 y 4,
+                        500 kilómetros de ida y otros tantos de regreso. Los bosques de oyamel en las montañas de Michoacán y el Estado de México.
+                        Les dan la bienvenida y en ellos se agrupan por millones, durante los meses de noviembre a marzo.
+                    </p>
+                </div>
+                <div class="card-body">
+                    <a href="@Url.Action("Details/1","sanctuaries")" class="btn">Ver detalles</a>
+                </div>
+            </div>
+        </div>
+
+        @*3*@
+        <div class="grid_4">
+            <div class="block1">
+                <div class="img_block">
+                    <img src="~/Content/img/puertoarista.png" height="200" width="400" alt="" class="img_inner">
+
+                </div>
+                <div class="text1">Playa de puerto arista</div><br>
+                <div class="card-body text-center">
+                    <h5 class="card-title">La guarida del mar</h5>
+                    <p class="card-text">
+                        En esta zona se protegen las especies de tortuga golfina, verde, laúd y carey. A partir del mes de agosto y hasta noviembre,
+                        se lleva a cabo el Tortufest, un festival que se realiza cada año en Puerto Arista. Mismo en el que voluntarios junto con
+                        el Campamento Tortuguero, ayudan a liberar centenares de tortugas recién nacidas.
+                    </p>
+                </div>
+                <div class="card-body">
+                    <a href="@Url.Action("Details/2","sanctuaries")" class="btn">Ver detalles</a>
+                </div>
+            </div>
+        </div>
+
+
+        @*4*@
+
+        <div class="grid_4">
+            <div class="block1">
+                <div class="img_block">
+                    <img src="~/Content/img/Jaguar.jpg" height="200" width="400" alt="" class="img_inner">
+
+                </div>
+                <div class="text1">Jaguar</div><br>
+                <div class="card-body text-center">
+                    <h5 class="card-title">En peligro de extinción</h5>
+                    <p class="card-text">
+                        Este felino es el llamado "tigre de América", por ser el más grande que habita en el continente. 
+                        Su aspecto general es tosco y macizo; un jaguar adulto puede medir entre 1.12 y 1.85 m de largo, sin incluir 
+                        la cola, la cual oscila entre 45 y 75 cm de longitud.
+                    </p>
+                </div>
+                <div class="card-body">
+                    <a href="@Url.Action("Details/5","biodiversities")" class="btn">Ver detalles</a>
+                </div>
+            </div>
+        </div>
+
+
+        @*5*@
+
+        <div class="grid_4">
+            <div class="block1">
+                <div class="img_block">
+                    <img src="~/Content/img/Vaquita.png" height="200" width="400" alt="" class="img_inner">
+
+                </div>
+                <div class="text1">Vaquita marina</div><br>
+                <div class="card-body text-center">
+                    <h5 class="card-title">En peligro de extinción</h5>
+                    <p class="card-text">
+                        Las vaquitas marinas son endémicas del Alto Golfo de California. Es decir, al 
+                        denominarlas endémicas, significa que sólo se encuentran en esta pequeña región del planeta. 
+                        Prefieren las aguas cálidas y poco profundas, y siempre están cerca de la costa, entre 11 y 25 km.
+                    </p>
+                </div>
+                <div class="card-body">
+                    <a href="@Url.Action("Details/3","biodiversities")" class="btn">Ver detalles</a>
+                </div>
+            </div>
+        </div>
+
+
+        @*6*@
+
+        <div class="grid_4">
+            <div class="block1">
+                <div class="img_block">
+                    <img src="~/Content/img/TortugaCaguama.jpg" height="200" width="400" alt="" class="img_inner">
+
+                </div>
+                <div class="text1">Tortuga caguama</div><br>
+                <div class="card-body text-center">
+                    <h5 class="card-title">En peligro de extinción</h5>
+                    <p class="card-text">
+                        Las tortugas caguamas de mar realizan uno de los viajes más largos conocidos de cualquier especie de tortuga marina. 
+                        Adaptada para estas largas migraciones, las caguamas del Norte del Pacífico tienen una pequeña concha y una aleta ampliada.
+                    </p>
+                </div>
+                <div class="card-body">
+                    <a href="@Url.Action("Details/4","biodiversities")" class="btn">Ver detalles</a>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+ </div>
+
+
+
+

@@ -1,0 +1,65 @@
+﻿@model Proyecto1.Models.biodiversity
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 class="text-white">Detalles</h2>
+
+<div>
+    <h2 class="text-white">Biodiversidad</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-5">
+            <table class="table table-secondary table-striped">
+                <tbody>
+                    <tr>
+                        <td><strong>@Html.DisplayNameFor(model => model.santuario.Nombre)</strong></td>
+                        <td>@Html.DisplayFor(model => model.santuario.Nombre)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>@Html.DisplayNameFor(model => model.Nombre)</strong></td>
+                        <td>@Html.DisplayFor(model => model.Nombre)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>@Html.DisplayNameFor(model => model.Tipo)</strong></td>
+                        <td>@Html.DisplayFor(model => model.Tipo)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>@Html.DisplayNameFor(model => model.Descripcion)</strong></td>
+                        <td>@Html.DisplayFor(model => model.Descripcion)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>@Html.DisplayNameFor(model => model.Especie)</strong></td>
+                        <td>@Html.DisplayFor(model => model.Especie)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    <h6 class="text-white">Biodiversidad (Flora/Fauna)</h6>
+                </div>
+                <div class="card-header">
+                    @if (Model.ImgUrl == null)
+                    {
+                        <img src="~/Content/img/Imagen.png" class="img-thumbnail" width="300" />
+                    }
+                    else if (Model.ImgUrl != null)
+                    {
+                        <img src="~/Content/img/@Model.ImgUrl" alt="Imagen no encontrada" width="250" class="rounded border border-secondary" />
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p>
+     @if (User.IsInRole("Admin"))
+      {
+        @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) 
+      }
+      @Html.ActionLink("Regresar", "Index")
+</p>
